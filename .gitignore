@@ -1,0 +1,36 @@
+# Optional editor config
+.editorconfig
+
+# Godot 4+ specific ignores
+.godot/
+.import/
+*.import
+.mono/
+.export/
+
+# Android/iOS build folders
+/android/
+/ios/
+
+# Compiled builds / exports
+*.apk
+*.aab
+*.exe
+*.zip
+*.dmg
+*.app
+*.tar.gz
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / editor folders (optional)
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
