@@ -9,7 +9,7 @@
 **Ambre** is a 2D pixel-art action-platformer developed with **[Godot 4](https://godotengine.org/)**. Currently in the prototype phase, the project implements core platforming mechanics (running, jumping) and a combat system against basic enemies.
 
 > [!NOTE]
-> Originally a personal initiative to create a **2D pixel-art platformer**, this project has been integrated into my **2nd-year engineering project at [Polytech Dijon](https://polytech.ube.fr)**.
+> Originally a personal initiative to create a **2D pixel-art platformer**, this project has been integrated into my **2nd-year engineering project at [Polytech Dijon](https://polytech.ube.fr) (2025-2026)**.
 
 ![Gameplay Screenshot](screenshots/gameplay.png)
 
