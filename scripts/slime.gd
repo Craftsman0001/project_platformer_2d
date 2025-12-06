@@ -42,6 +42,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.name == "AttackZone":
+	if area.name == "PlayerAttackZone":
 		is_dead = true
 		animated_sprite_2d.play("death")
