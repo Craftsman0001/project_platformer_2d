@@ -18,7 +18,7 @@
 2. [Controls](#controls)
 3. [Installation](#installation)
 4. [Project Architecture](#project-architecture)
-5. [Credits](#credits)
+5. [Credits & License](#credits)
 
 ## Features
 
@@ -40,7 +40,7 @@ The game supports Keyboard controls.
 | Action | Key |
 | :--- | :---: |
 | **Move** | <kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> |
-| **Jump** | <kbd>Z</kbd> <kbd>↑</kbd>|
+| **Jump** | <kbd>Z</kbd> or <kbd>↑</kbd>|
 | **Attack** | <kbd>A</kbd> |
 
 ## Installation
