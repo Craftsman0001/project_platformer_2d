@@ -5,6 +5,7 @@ const SPEED = 20.0
 @onready var ray_cast_bottom_right: RayCast2D = $RayCastBottom
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var killzone: Area2D = $Killzone
 
 var direction = 1
 var is_dead = false
@@ -44,4 +45,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerAttackZone":
 		is_dead = true
+		killzone.set_deferred("monitoring", false)
+		killzone.set_deferred("monitorable", false)
 		animated_sprite_2d.play("death")

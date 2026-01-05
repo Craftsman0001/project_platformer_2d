@@ -320,12 +320,6 @@ tile_set = SubResource("TileSet_lnu2h")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -16)
-zoom = Vector2(3, 3)
-limit_bottom = 180
-limit_smoothed = true
-
 [node name="Killzone" parent="." instance=ExtResource("3_lnu2h")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
