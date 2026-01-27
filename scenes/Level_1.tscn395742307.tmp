@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://bk46jg3m0wyda"]
+[gd_scene load_steps=10 format=4 uid="uid://bk46jg3m0wyda"]
 
-[ext_resource type="PackedScene" uid="uid://im8oy8ip0cj0" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://eqdcigekhgke" path="res://assets/tilesets/oak_woods/oak_woods_tileset.png" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bn0svyj40m4dx" path="res://scenes/killzone.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://dbipo5nab3ub2" path="res://scenes/slime.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://eqdcigekhgke" path="res://assets/tilesets/oak_woods/oak_woods_tileset.png" id="1_fxqaj"]
+[ext_resource type="PackedScene" uid="uid://im8oy8ip0cj0" path="res://scenes/player.tscn" id="2_d6w1m"]
+[ext_resource type="PackedScene" uid="uid://bn0svyj40m4dx" path="res://scenes/killzone.tscn" id="3_kjrqm"]
+[ext_resource type="PackedScene" uid="uid://ctf8b2o0uhr1y" path="res://scenes/coin.tscn" id="4_bmqp6"]
+[ext_resource type="PackedScene" uid="uid://dbipo5nab3ub2" path="res://scenes/slime.tscn" id="5_f63rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
-texture = ExtResource("2_yqjtg")
+texture = ExtResource("1_fxqaj")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
@@ -312,30 +313,81 @@ sources/0 = SubResource("TileSetAtlasSource_yqjtg")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 distance = -207.0
 
-[node name="Game" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_iywne"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Level 1" type="Node2D"]
 
 [node name="Blocks" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD5/wAAAAAAAAAAAAD6/wAAAAABAAAAAAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAADAAAAAAAEAP7/AAAAAAAAAAAKAP7/AAADAAAAAAAFAP7/AAACAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAACAAAAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAABAAIAAAABAAEAAAAAAAIAAAABAAEAAAD//wIAAAABAAEAAAD+/wIAAAABAAEAAAD9/wIAAAABAAEAAAD8/wIAAAABAAEAAAD7/wIAAAABAAEAAAD6/wIAAAABAAEAAAD5/wEAAAAAAAEAAAD5/wIAAAAAAAEAAAD///z/AAACAAAAAAD+//z/AAACAAAAAAD9//z/AAACAAAAAAD8//z/AAACAAAAAAD7//z/AAACAAAAAAD6//z/AAACAAAAAAD5//z/AAAAAAAAAAABAPz/AAADAAAAAAAAAPz/AAACAAAAAAD6//r/AAAGAAIAAAD4//n/AAAGAAIAAAAPAP3/AAABAAAAAAAQAP3/AAABAAAAAAARAP3/AAABAAAAAAASAP3/AAANAA0AAAATAP3/AAABAAAAAAAUAP3/AAABAAAAAAAVAP3/AAABAAAAAAAWAP3/AAADAAAAAAAOAP3/AAAAAAAAAAAGAP3/AAAGAAIAAAAIAPv/AAABAAAAAAAHAPv/AAAAAAAAAAAJAPv/AAADAAAAAAAGAP7/AAAMAA4AAAAHAAEAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAALAAEAAAACAAAAAAAMAAEAAAACAAAAAAANAAEAAAACAAAAAAAOAAEAAAACAAAAAAAPAAEAAAACAAAAAAAQAAEAAAACAAAAAAARAAEAAAACAAAAAAASAAEAAAADAAAAAAASAAIAAAADAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAJAAIAAAABAAEAAAAKAAIAAAABAAEAAAALAAIAAAABAAEAAAAMAAIAAAABAAEAAAANAAIAAAABAAEAAAAOAAIAAAABAAEAAAAPAAIAAAABAAEAAAAQAAIAAAABAAEAAAARAAIAAAABAAEAAAAWAAAAAAAAAAAAAAAXAAAAAAABAAAAAAAYAAAAAAACAAAAAAAZAAAAAAADAAAAAAAbAP7/AAAAAAAAAAAcAP7/AAABAAAAAAAdAP7/AAACAAAAAAAeAP7/AAADAAAAAAANAPf/AAAFAAAAAAAOAPf/AAAGAAAAAAAPAPf/AAAHAAAAAAAQAPf/AAAIAAAAAAASAPz/AAAGAAIAAAA=")
 tile_set = SubResource("TileSet_lnu2h")
 
-[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Player" parent="." instance=ExtResource("2_d6w1m")]
 
-[node name="Killzone" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Killzone" parent="." instance=ExtResource("3_kjrqm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1, 17)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Coins" type="Node" parent="Collectibles"]
+
+[node name="Coin" parent="Collectibles/Coins" instance=ExtResource("4_bmqp6")]
+position = Vector2(-143, -19)
+
+[node name="Coin2" parent="Collectibles/Coins" instance=ExtResource("4_bmqp6")]
+position = Vector2(231, 7)
+
+[node name="Coin3" parent="Collectibles/Coins" instance=ExtResource("4_bmqp6")]
+position = Vector2(224, -140)
+
+[node name="Coin4" parent="Collectibles/Coins" instance=ExtResource("4_bmqp6")]
+position = Vector2(733, -66)
+
+[node name="Coin5" parent="Collectibles/Coins" instance=ExtResource("4_bmqp6")]
+position = Vector2(-181, -185)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Slimes" type="Node" parent="Enemies"]
+
+[node name="slime1" parent="Enemies/Slimes" instance=ExtResource("5_f63rn")]
 position = Vector2(-71, -96)
 
-[node name="slime1" parent="Enemies" instance=ExtResource("4_lbhrr")]
+[node name="slime2" parent="Enemies/Slimes" instance=ExtResource("5_f63rn")]
+position = Vector2(390, -72)
 
-[node name="slime2" parent="Enemies" instance=ExtResource("4_lbhrr")]
-position = Vector2(461, 24)
+[node name="slime3" parent="Enemies/Slimes" instance=ExtResource("5_f63rn")]
+position = Vector2(412, 24)
 
-[node name="slime3" parent="Enemies" instance=ExtResource("4_lbhrr")]
-position = Vector2(483, 120)
+[node name="slime4" parent="Enemies/Slimes" instance=ExtResource("5_f63rn")]
+position = Vector2(705, -48)
 
-[node name="slime4" parent="Enemies" instance=ExtResource("4_lbhrr")]
-position = Vector2(776, 48)
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sky" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.627451, 0.9647059, 1, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 23.0
+text = "Coins : 0"
+label_settings = SubResource("LabelSettings_iywne")

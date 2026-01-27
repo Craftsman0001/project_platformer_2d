@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://05qm7d3r176w"]
+
+[ext_resource type="Texture2D" uid="uid://b1b8gucdbgvxh" path="res://assets/loot/animated_items_outline.png" id="1_efmwq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_efmwq"]
+font_size = 17
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfius"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynd5l"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8iy7"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqlde"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08a8y"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yii4"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yt8u"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p54wi"]
+atlas = ExtResource("1_efmwq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xki8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfius")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynd5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8iy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqlde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08a8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yii4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yt8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p54wi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="CoinsValue" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 54.0
+offset_bottom = 39.0
+text = "0"
+label_settings = SubResource("LabelSettings_efmwq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(19, 23)
+scale = Vector2(0.7, 0.76)
+sprite_frames = SubResource("SpriteFrames_xki8e")
+autoplay = "default"

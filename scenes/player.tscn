@@ -392,9 +392,9 @@ height = 65.38521
 radius = 5.0364966
 height = 32.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 21
 script = ExtResource("1_g2els")
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -404,10 +404,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2D"]
 position = Vector2(7, -3)
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"death"
+animation = &"fall"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.23713928
 offset = Vector2(-0.5, 0)
 
 [node name="PlayerAttackZone" type="Area2D" parent="Marker2D/AnimatedSprite2D"]
@@ -425,11 +423,10 @@ shape = SubResource("CapsuleShape2D_ur7pv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -16)
-zoom = Vector2(2, 2)
 process_callback = 0
 limit_bottom = 180
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 7.0
+position_smoothing_speed = 6.0
 
 [connection signal="animation_finished" from="Marker2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

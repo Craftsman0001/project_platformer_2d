@@ -15,11 +15,20 @@ run/main_scene="uid://bk46jg3m0wyda"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://scenes/game_manager.tscn"
+
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
-window/stretch/mode="viewport"
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
 
 [input]
 
@@ -58,10 +67,11 @@ dash={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Killzone"
 2d_physics/layer_4="Enemies"
+2d_physics/layer_5="Collectibles"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.7254902, 0.9137255, 1, 1)
+environment/defaults/default_clear_color=Color(0.59923744, 0.34520468, 0.13298658, 1)

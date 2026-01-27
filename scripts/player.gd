@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-const SPEED = 180.0
-const JUMP_VELOCITY = -400.0
+const SPEED: float = 180.0
+const JUMP_VELOCITY: float = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Marker2D/AnimatedSprite2D
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var attack_zone: CollisionShape2D = $Marker2D/AnimatedSprite2D/PlayerAttackZone/CollisionShape2D
 
-var is_attacking = false
+var is_attacking: bool = false
 
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)

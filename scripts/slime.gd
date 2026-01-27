@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 20.0
+const SPEED: float = 20.0
 
 @onready var ray_cast_bottom_right: RayCast2D = $RayCastBottom
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var killzone: Area2D = $Killzone
 
-var direction = 1
-var is_dead = false
+var direction: int = 1
+var is_dead: bool = false
 
 func add_gravity(delta: float) -> void:
 	if not is_on_floor():
